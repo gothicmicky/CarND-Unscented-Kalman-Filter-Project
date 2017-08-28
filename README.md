@@ -47,3 +47,13 @@ Matlab scripts that can generate additional data.
 ![alt text][ukf_output]
 
 [ukf_output]: ./media/UKF_simulator_output.png
+
+### Final RMSE:
+```
+Total number of estimations: 499
+RMSE: 
+0.0674596
+0.0891818
+0.330094
+0.23666
+``` 
