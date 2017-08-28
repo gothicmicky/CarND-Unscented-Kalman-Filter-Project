@@ -8,7 +8,6 @@ Self-Driving Car Engineer Nanodegree Program
 [ukf_flow_chart]: ./media/UKF_flow_chart.png 
 
 ## Dependencies
-
 * cmake >= 3.5
  * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1
@@ -20,23 +19,17 @@ Self-Driving Car Engineer Nanodegree Program
   * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
   
-  
 ## Build Instructions
-
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make` 
-   * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
-4. Run it: `./ExtendedKF path/to/input.txt path/to/output.txt`. You can find
-   some sample inputs in 'data/'.
-    - eg. `./ExtendedKF ../data/sample-laser-radar-measurement-data-1.txt output.txt`
+3. Compile: `cmake .. && make`
+4. Run it: `./UnscentedKF` Previous versions use i/o from text files.  The current state uses i/o
+from the simulator.
 
 ## Code Style
-
 Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
 ## Generating Additional Data
-
 This is optional!
 
 If you'd like to generate your own radar and lidar data, see the
