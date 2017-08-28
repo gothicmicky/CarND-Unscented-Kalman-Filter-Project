@@ -14,5 +14,30 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   /**
   TODO:
     * Calculate the RMSE here.
+    * RMSE = SQRT(Sigma((estimation - ground_truth)^2))/num_samples
   */
+    // Data sizes
+    int est_size = estimations.size();
+    int gr_size = ground_truth.size();
+    assert (est_size == gr_size);
+    
+    // RMSE
+    VectorXd rmse(4);
+    rmse << 0,0,0,0;
+    for(int i=0; i< est_size; i++) {
+        VectorXd tmp;
+        // Element-wise operations
+        tmp = estimations[i] - ground_truth[i];
+        tmp = (tmp.array()*tmp.array());
+        // Accumulation into rmse
+        rmse += tmp;
+    }
+    rmse = rmse.array()/est_size;
+    rmse = rmse.array().sqrt();
+    
+    std::cout << "Total number of estimations: " << est_size << "\n";
+    std::cout << "RMSE: " << "\n";
+    std::cout << rmse << "\n";
+
+    return rmse;
 }

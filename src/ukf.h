@@ -12,7 +12,26 @@ using Eigen::VectorXd;
 
 class UKF {
 public:
+    /**
+     * Constructor
+     */
+    UKF();
+    
+    /**
+     * Destructor
+     */
+    virtual ~UKF();
+    
+    /**
+     * ProcessMeasurement
+     * @param meas_package The latest measurement data of either radar or laser
+     */
+    void ProcessMeasurement(MeasurementPackage meas_package, bool isFirstMeasurement=false);
+    
+    ///* state vector: [pos1 pos2 vel_abs yaw_angle yaw_rate] in SI units and rad
+    VectorXd x_;
 
+private:
   ///* initially set to false, set to true in first call of ProcessMeasurement
   bool is_initialized_;
 
@@ -21,9 +40,6 @@ public:
 
   ///* if this is false, radar measurements will be ignored (except for init)
   bool use_radar_;
-
-  ///* state vector: [pos1 pos2 vel_abs yaw_angle yaw_rate] in SI units and rad
-  VectorXd x_;
 
   ///* state covariance matrix
   MatrixXd P_;
@@ -66,23 +82,23 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+    
+private:
+  ///* sum of n_aug_ and lambda_, avoid duplciates of calculating this
+  double sum_lambda_n_aug_;
+    
+  ///* the current NIS for radar
+  double NIS_radar_;
+    
+  ///* the current NIS for laser 
+  double NIS_laser_;
 
-
-  /**
-   * Constructor
-   */
-  UKF();
-
-  /**
-   * Destructor
-   */
-  virtual ~UKF();
-
-  /**
-   * ProcessMeasurement
-   * @param meas_package The latest measurement data of either radar or laser
-   */
-  void ProcessMeasurement(MeasurementPackage meas_package);
+    /**
+     * Prediction steps
+     */
+  void GenerateAugmentedSigmaPoints();
+  void StatePrediction(double delta_t);
+  void StatePredictionMeanCovariance();
 
   /**
    * Prediction Predicts sigma points, the state, and the state covariance
