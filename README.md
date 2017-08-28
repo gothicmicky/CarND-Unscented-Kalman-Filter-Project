@@ -2,7 +2,7 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
-## EKF flow chart for this project
+## EKF flowchart for this project
 ![alt text][ukf_flow_chart]
 
 [ukf_flow_chart]: ./media/UKF_flow_chart.png 
@@ -42,3 +42,8 @@ This is optional!
 If you'd like to generate your own radar and lidar data, see the
 [utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities) for
 Matlab scripts that can generate additional data.
+
+## Simulator Output
+![alt text][ukf_output]
+
+[ukf_output]: ./media/UKF_simulator_output.png
