@@ -1,11 +1,13 @@
 # Unscented Kalman Filter Project 
 Self-Driving Car Engineer Nanodegree Program
 
+In this project, an Unscented Kalman Filter (UKF) was utilized to estimate the state of a moving object of interest with noisy lidar and radar measurements. RMSE values were used to evaluate the model performance.
+
 ---
 ## EKF flowchart for this project
-![alt text][ukf_flow_chart]
+![alt text][ukf_flowchart]
 
-[ukf_flow_chart]: ./media/UKF_flow_chart.png 
+[ukf_flowchart]: ./media/UKF_flowchart.png 
 
 ## Dependencies
 * cmake >= 3.5
@@ -23,20 +25,20 @@ Self-Driving Car Engineer Nanodegree Program
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
-4. Run it: `./UnscentedKF` Previous versions use i/o from text files.  The current state uses i/o
-from the simulator.
+4. Run it: `./UnscentedKF` 
 
 ## Code Style
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+The coding style follows [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
 ## Generating Additional Data
 This is optional!
 
 If you'd like to generate your own radar and lidar data, see the
-[utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities) for
-Matlab scripts that can generate additional data.
+[utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities) for Matlab scripts that can generate additional data.
 
-## Simulator Output
+## Results
+
+### Simulator Output
 ![alt text][ukf_output]
 
 [ukf_output]: ./media/UKF_simulator_output.png
